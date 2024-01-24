@@ -12,7 +12,6 @@ export function Todos() {
         setTodos(data.todos);
       } catch (error) {
         console.error("Error fetching todos:", error);
-        // Handle error, maybe set an error state
       }
     };
 
@@ -21,7 +20,7 @@ export function Todos() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
       {todos.map(function (todo) {
-        //console.log("Current todo object:", todo); // Log the entire todo object for debugging
+        
         return (
           <div key={todo._id} style={styles.todoItem}>
             <h1>{todo.title}</h1>
@@ -44,7 +43,6 @@ export function Todos() {
         );
       })}
 
-      {/* Navigation Links */}
       <div style={{ marginTop: '20px' }}>
         <Link to="/createtodo" style={styles.link}>Create TODO</Link>
         <Link to="/" style={styles.link}>Home</Link>
