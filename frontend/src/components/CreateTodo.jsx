@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link  } from "react-router-dom";
+import axios from 'axios'
 export function CreateTodo(props) {
   // react-query
   const [title, setTitle] = useState("");
@@ -18,7 +19,7 @@ export function CreateTodo(props) {
       title: title,
       description: description,
     })
-      .then((response) => {
+      .then(() => {
         setTitle("");
         setDescription("");
       })
