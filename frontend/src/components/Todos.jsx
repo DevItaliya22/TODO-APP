@@ -17,23 +17,14 @@ export function Todos() {
         setTodos(data.todos);
       } catch (error) {
         console.error("Error fetching todos:", error.message);
-        // Handle error, show message to the user, etc.
+       
       }
     };
 
     fetchData();
   }, []); 
 
-  const handleToggleCompletion = async (todoId, currentStatus) => {
-    try {
-      // Implement the actual functionality to toggle completion status
-      // You may need to make an API call to update the status and then update local state
-    } catch (error) {
-      console.error("Error toggling completion:", error.message);
-      // Handle error, show message to the user, etc.
-    }
-  };
-
+  
   return (
     <>
       {isLoading ? (
@@ -70,7 +61,12 @@ export function Todos() {
           </div>
         </div>
       ) : (
-        <h1>Please login</h1>
+        <div>
+          <button onClick={loginWithRedirect}>Log in</button>
+          <h1>Please login</h1>
+        </div>
+        
+        
       )}
     </>
   );
